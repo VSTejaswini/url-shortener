@@ -1,17 +1,6 @@
 {
-  "name": "url-shortener",
-  "version": "1.0.0",
-  "description": "Scalable URL shortener using Node.js, Express, PostgreSQL and Redis",
-  "main": "server.js",
-  "scripts": {
-    "start": "node server.js",
-    "dev": "node server.js"
-  },
-  "dependencies": {
-    "cors": "^2.8.5",
-    "dotenv": "^16.4.7",
-    "express": "^4.21.2",
-    "pg": "^8.13.1",
-    "redis": "^4.7.0"
-  }
+  "name": "url-shortener-backend", "version": "1.0.0", "private": true,
+  "scripts": {"start": "node server.js", "dev": "node --watch server.js"},
+  "dependencies": {"cors": "^2.8.5", "dotenv": "^16.4.5", "express": "^4.21.2", "express-rate-limit": "^7.5.0", "pg": "^8.13.1", "redis": "^4.7.0"},
+  "engines": {"node": ">=20"}
 }
