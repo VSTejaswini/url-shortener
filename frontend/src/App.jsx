@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 const API = (import.meta.env.VITE_API_URL || 'http://localhost:3000').replace(/\/$/, '');
 export default function App() {
   const [originalUrl, setOriginalUrl] = useState('');
