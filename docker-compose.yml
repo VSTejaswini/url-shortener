@@ -1,7 +1,6 @@
 services:
   postgres:
     image: postgres:16
-    container_name: url-shortener-postgres
     environment:
       POSTGRES_USER: urluser
       POSTGRES_PASSWORD: urlpassword
@@ -10,12 +9,13 @@ services:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
-
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U urluser -d urlshortener"]
+      interval: 5s
+      retries: 10
   redis:
     image: redis:7
-    container_name: url-shortener-redis
     ports:
       - "6379:6379"
-
 volumes:
   postgres_data:
